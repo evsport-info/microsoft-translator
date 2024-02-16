@@ -8,7 +8,7 @@ class Detect extends AbstractMicrosoftTranslatorApiCall
 
     public function __construct($text)
     {
-        if (strlen($text) > self::MAXIMUM_LENGTH_OF_TEXT) {
+        if (mb_strlen($text) > self::MAXIMUM_LENGTH_OF_TEXT) {
             throw new \InvalidArgumentException(sprintf('Text may not be longer than %d characters', self::MAXIMUM_LENGTH_OF_TEXT));
         }
 

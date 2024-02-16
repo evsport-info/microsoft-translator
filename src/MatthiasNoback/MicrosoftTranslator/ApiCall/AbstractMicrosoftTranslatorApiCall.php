@@ -8,7 +8,22 @@ abstract class AbstractMicrosoftTranslatorApiCall implements ApiCallInterface
 {
     const HTTP_API_URL = 'https://api.cognitive.microsofttranslator.com/';
 
-    const MAXIMUM_LENGTH_OF_TEXT = 10000;
+    /**
+     * Maximum Request Size (characters)
+     * @link https://learn.microsoft.com/en-us/azure/ai-services/translator/service-limits
+     *
+     * Operation:
+     * - Translate
+     * - Detect
+     * - BreakSentence
+     */
+    const MAXIMUM_LENGTH_OF_TEXT = 50000;
+
+    /**
+     * Dictionary Lookup Maximum Request Size (characters)
+     * @link https://learn.microsoft.com/en-us/azure/ai-services/translator/service-limits
+     */
+    const DICTIONARY_LOOKUP_MAXIMUM_LENGTH = 1000;
 
     abstract public function getApiMethodName();
 

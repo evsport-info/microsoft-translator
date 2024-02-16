@@ -13,8 +13,8 @@ class DictionaryLookup extends AbstractMicrosoftTranslatorApiCall
 
     public function __construct($text, $to, $from = null)
     {
-        if (strlen($text) > self::MAXIMUM_LENGTH_OF_TEXT) {
-            throw new \InvalidArgumentException(sprintf('Text may not be longer than %d characters', self::MAXIMUM_LENGTH_OF_TEXT));
+        if (mb_strlen($text) > self::MAXIMUM_LENGTH_OF_TEXT) {
+            throw new \InvalidArgumentException(sprintf('Text may not be longer than %d characters', self::DICTIONARY_LOOKUP_MAXIMUM_LENGTH));
         }
 
         $this->text = $text;

@@ -14,7 +14,8 @@
     ],
     "require": {
         "kriswallsmith/buzz": "^1.2",
-        "doctrine/cache": "^1.11"
+        "doctrine/cache": "^1.11",
+        "ext-mbstring": "*"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
